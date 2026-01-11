@@ -1,0 +1,16 @@
+aguest.me {
+    root * /srv
+    file_server
+    encode gzip zstd
+}
+
+:80 {
+    root * /srv
+    file_server
+}
+
+localhost {
+    root * /srv
+    file_server
+    tls internal
+}
