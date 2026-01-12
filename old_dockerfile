@@ -27,5 +27,5 @@ COPY --from=builder /app/dist /srv
 # Copy Caddyfile
 COPY Caddyfile /etc/caddy/Caddyfile
 
-# Expose HTTP & HTTPS
-EXPOSE 80 443
+# Expose HTTPS
+EXPOSE 443
