@@ -75,19 +75,16 @@ const App: Component = () => {
                             Currently learning <strong>Go</strong> and <strong>SolidJS</strong>.
                         </p>
                         <div class="tech-stack">
-                            <span className="tech-badge">Python</span>
-                            <span className="tech-badge">Go</span>
-                            <span className="tech-badge">SolidJS</span>
-                            <span className="tech-badge">FastAPI</span>
-                            <span className="tech-badge">HTMX</span>
-                            <span className="tech-badge">Alpine.js</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Go</span>
+                            <span class="tech-badge">JavaScript</span>
                         </div>
                     </div>
                     <div class="header-right">
-                        <a href="https://github.com/andrewguest" class="social-link" target="_blank" rel="noopener" title="GitHub">
+                        <a href="https://codeberg.org/andrewguest" class="social-link" target="_blank" rel="noopener" title="Codeberg">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="mailto:contact@aguest.me" class="social-link" title="Email">
+                        <a href="mailto:andrew@aguest.me" class="social-link" title="Email">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
@@ -127,9 +124,9 @@ const App: Component = () => {
                                         <div class="project-links">
                                             <For each={project.githubUrls}>
                                                 {(repoUrl) => (
-                                                    <a href={repoUrl} className="project-link" target="_blank"
+                                                    <a href={repoUrl} class="project-link" target="_blank"
                                                        rel="noopener" title="View Repository">
-                                                        <i className={project.repoIcon}></i>
+                                                        <i class={project.repoIcon}></i>
                                                     </a>
                                                 )}
                                             </For>
@@ -142,26 +139,18 @@ const App: Component = () => {
                                         {project.description}
                                     </p>
                                     <div class="tech-stack-label">Tech Stack</div>
-                                    <div className="project-tech">
-                                        <div className="tech-row">
-                                            <span className="tech-category">Frontend language:</span>
-                                            <span className="tech-items">{project.techStack.frontend_lang}</span>
+                                    <div class="project-tech-grid">
+                                        <div class="tech-col">
+                                            <div class="tech-category">Frontend</div>
+                                            <div class="tech-items">{project.techStack.frontend_framework}</div>
                                         </div>
-                                        <div className="tech-row">
-                                            <span className="tech-category">Frontend framework:</span>
-                                            <span className="tech-items">{project.techStack.frontend_framework}</span>
+                                        <div class="tech-col">
+                                            <div class="tech-category">Backend</div>
+                                            <div class="tech-items">{project.techStack.backend_framework}</div>
                                         </div>
-                                        <div className="tech-row">
-                                            <span className="tech-category">Backend language:</span>
-                                            <span className="tech-items">{project.techStack.backend_lang}</span>
-                                        </div>
-                                        <div className="tech-row">
-                                            <span className="tech-category">Backend framework:</span>
-                                            <span className="tech-items">{project.techStack.backend_framework}</span>
-                                        </div>
-                                        <div className="tech-row">
-                                            <span className="tech-category">Database:</span>
-                                            <span className="tech-items">{project.techStack.database}</span>
+                                        <div class="tech-col">
+                                            <div class="tech-category">Other</div>
+                                            <div class="tech-items">{project.techStack.database}</div>
                                         </div>
                                     </div>
                                 </article>
@@ -173,7 +162,6 @@ const App: Component = () => {
 
             <footer>
                 <p>Feel free to try out these projects, but please don't abuse them.</p>
-                <p>Built with <i class="fas fa-heart" style="color: var(--accent);"></i> by Andrew Guest</p>
             </footer>
         </div>
     );

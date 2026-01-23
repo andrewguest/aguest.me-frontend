@@ -6,9 +6,9 @@
     --slate: #1a1f2e;
     --gray: #2a3142;
     --light-gray: #8b92a8;
-    --accent: #00ff9f;
-    --accent-dim: #00cc7f;
-    --accent-bright: #66ffbf;
+    --accent: #4fa3ff;
+    --accent-dim: #3b82d6;
+    --accent-bright: #93c5fd;
     --white: #ffffff;
     --off-white: #e8edf4;
     --border: #3d4557;
@@ -31,18 +31,16 @@ body {
 
 /* Animated gradient background */
 body::before {
-    content: '';
+    content: "";
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
+    z-index: -1;
     background:
-            radial-gradient(circle at 20% 50%, rgba(0, 255, 159, 0.08) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, rgba(102, 255, 191, 0.06) 0%, transparent 50%),
-            radial-gradient(circle at 50% 90%, rgba(0, 204, 127, 0.05) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: 0;
+            radial-gradient(
+                    circle at 85% 90%,
+                    rgba(79, 163, 255, 0.06),
+                    transparent 65%
+            );
 }
 
 .container {
@@ -280,20 +278,34 @@ header {
 }
 
 .project-description {
-    color: #b8bfcc;
+    color: #b8c3d9;
     margin-bottom: 1.5rem;
     line-height: 1.7;
 }
 
 .tech-stack-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--accent);
     margin-bottom: 0.75rem;
     font-weight: 600;
 }
+
+.project-tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+}
+
+.tech-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
 
 .project-tech {
     display: grid;
@@ -308,8 +320,8 @@ header {
 
 .tech-category {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    color: var(--accent);
+    font-size: 0.9rem;
+    color: var(--accent-dim);
     font-weight: 600;
     min-width: 90px;
     flex-shrink: 0;
@@ -317,7 +329,7 @@ header {
 
 .tech-items {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     color: #d4d9e3;
     flex: 1;
 }
