@@ -6,7 +6,7 @@
     --slate: #1a1f2e;
     --gray: #2a3142;
     --light-gray: #8b92a8;
-    --accent: #3771af;
+    --accent: #458ddf;
     --accent-dim: #3b82d6;
     --accent-bright: #93c5fd;
     --white: #ffffff;
@@ -37,9 +37,9 @@ body::before {
     inset: 0;
     z-index: -1;
     background: radial-gradient(
-        circle at 85% 90%,
-        rgba(79, 163, 255, 0.06),
-        transparent 65%
+            circle at 85% 90%,
+            rgba(79, 163, 255, 0.06),
+            transparent 65%
     );
 }
 
@@ -207,8 +207,8 @@ header {
     position: relative;
     overflow: hidden;
     box-shadow:
-        0 4px 6px -1px rgba(0, 0, 0, 0.3),
-        0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            0 4px 6px -1px rgba(0, 0, 0, 0.3),
+            0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
 .project-card::before {
@@ -229,8 +229,8 @@ header {
     border-color: var(--accent);
     transform: translateX(8px);
     box-shadow:
-        0 10px 15px -3px rgba(0, 0, 0, 0.4),
-        0 4px 6px -2px rgba(0, 0, 0, 0.3);
+            0 10px 15px -3px rgba(0, 0, 0, 0.4),
+            0 4px 6px -2px rgba(0, 0, 0, 0.3);
 }
 
 .project-card:hover::before {
