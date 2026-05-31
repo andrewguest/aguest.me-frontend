@@ -2,9 +2,6 @@
 FROM oven/bun:1 AS build
 WORKDIR /app
 
-# Arguments
-ARG VITE_API_URL
-
 COPY package.json bun.lock* ./
 RUN bun install --frozen-lockfile
 

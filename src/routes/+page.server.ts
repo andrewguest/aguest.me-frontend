@@ -1,13 +1,16 @@
-import type { PageLoad } from './$types';
+import type { PageServerLoad } from './$types';
+import type { ApiProject } from '$lib/types';
+import { env } from '$env/dynamic/private';
 
-import type { ApiProject, Project } from '$lib/types'
+export const load: PageServerLoad = async ({ fetch }) => {
+	//const apiUrl = env.API_URL;
+	const apiUrl = "https://api.aguest.me"
 
+	if (!apiUrl) {
+		throw new Error('API_URL environment variable is not set');
+	}
 
-const API_URL = import.meta.env.VITE_API_URL;
-
-
-export const load: PageLoad = async ({ fetch }) => {
-	const response = await fetch(API_URL);
+	const response = await fetch(apiUrl);
 
 	if (!response.ok) {
 		throw new Error('Failed to fetch projects');
@@ -34,5 +37,4 @@ export const load: PageLoad = async ({ fetch }) => {
 		projects
 	};
 };
-
 
